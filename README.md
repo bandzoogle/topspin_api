@@ -16,9 +16,9 @@ gem 'topspin_store'
 ## Usage
 
 ```ruby
-> TopspinStore::authenticate 'me@example.com', 'MYAPIKEY123456'
 > store = TopspinStore::Store.new 1234
  => #<TopspinStore::Store:0x007fbc3a052b40...
+> store.authenticate 'me@example.com', 'MYAPIKEY123456'
 ```
 
 In the above example, <code>1234</code> refers to your artist_id.

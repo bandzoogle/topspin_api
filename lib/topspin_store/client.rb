@@ -7,16 +7,18 @@ module TopspinStore
     base_uri 'app.topspin.net'
     default_timeout 3
 
-    def self.authenticate(email, api_key)
-      basic_auth email, api_key
+    def authenticate(email, api_key)
+      @email = email
+      @api_key = api_key
     end
 
     def initialize(artist_id)
       @artist_id = artist_id
     end
 
-    def fetch_json(path)
-      response = self.class.get "/api/v2/store/#{path}"
+    def fetch_json(path, options = {})
+      options[:basic_auth] = { :username => @email, :password => @api_key }
+      response = self.class.get "/api/v2/store/#{path}", options
       puts response.inspect
       puts response.headers['status']
       case status = response.headers['status']

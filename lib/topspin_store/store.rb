@@ -9,6 +9,10 @@ module TopspinStore
       @client = Client.new(artist_id)
     end
 
+    def authenticate(email, api_key)
+      @client.authenticate(email, api_key)
+    end
+
     # Get an array of all the offers available at this artist's store.
     # It's a paginated list.
     def offers(options = {})
