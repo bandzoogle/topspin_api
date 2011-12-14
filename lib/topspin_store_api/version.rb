@@ -1,3 +1,3 @@
-module TopspinStore
+module TopspinStoreApi
   VERSION = "0.0.1"
 end

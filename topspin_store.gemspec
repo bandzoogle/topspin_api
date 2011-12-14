@@ -1,13 +1,13 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "topspin_store/version"
+require "topspin_store_api/version"
 
 Gem::Specification.new do |s|
-  s.name        = "topspin_store"
-  s.version     = TopspinStore::VERSION
+  s.name        = "topspin_store_api"
+  s.version     = TopspinStoreApi::VERSION
   s.authors     = ["Bill Horsman"]
   s.email       = ["bill@logicalcobwebs.com"]
-  s.homepage    = "https://github.com/bandzoogle/topspin_store"
+  s.homepage    = "https://github.com/bandzoogle/topspin_store_api"
   s.summary     = %q{TODO: Client for the TopSpin Store API V2}
   s.description = %q{TODO: Client for the TopSpin Store API V2}
 

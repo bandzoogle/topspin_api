@@ -1,6 +1,6 @@
 require 'httparty'
 
-module TopspinStore
+module TopspinStoreApi
 
   class Client
     include HTTParty
