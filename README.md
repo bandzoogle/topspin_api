@@ -16,14 +16,14 @@ gem 'topspin_store'
 ## Usage
 
 ```ruby
-> store = TopspinStore::Store.new 1234
- => #<TopspinStore::Store:0x007fbc3a052b40...
+> store = TopspinStoreApi::Store.new 1234
+ => #<TopspinStoreApi::Store:0x007fbc3a052b40...
 > store.authenticate 'me@example.com', 'MYAPIKEY123456'
 ```
 
 In the above example, <code>1234</code> refers to your artist_id.
 
-### TopspinStore::Store#offers
+### TopspinStoreApi::Store#offers
 
 Gets a list of offers available from the store:
 
@@ -51,7 +51,7 @@ The array has been extended to include information about the pagination. For ins
  => 25
 ```
 
-### TopspinStore::Store#detail
+### TopspinStoreApi::Store#detail
 
 Gets detailed information about one offer:
 
@@ -64,8 +64,8 @@ Gets detailed information about one offer:
 
 These are the errors you might expect:
 
-* <code>TopspinStore::ClientError</code> - either your credentials are wrong or you've asked for a resource that doesn't exist.
-* <code>TopspinStore::InternalError</code> - an unexpected problem with the API.
+* <code>TopspinStoreApi::ClientError</code> - either your credentials are wrong or you've asked for a resource that doesn't exist.
+* <code>TopspinStoreApi::InternalError</code> - an unexpected problem with the API.
 * <code>Timeout::Error</code> - the API has taken longer than 3 seconds to respond.
 
 ## Topspin API

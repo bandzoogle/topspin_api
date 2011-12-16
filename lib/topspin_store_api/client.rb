@@ -27,15 +27,15 @@ module TopspinStoreApi
       when "401"
         msg = response["message"] rescue nil
         msg ||= "Unauthorized access"
-        raise TopspinStore::ClientError.new "Topspin: #{msg} (#{status})"
+        raise TopspinStoreApi::ClientError.new "Topspin: #{msg} (#{status})"
       when "404"
         msg = response["message"] rescue nil
         msg ||= "Resource not found"
-        raise TopspinStore::ClientError.new "Topspin: #{msg} (#{status})"
+        raise TopspinStoreApi::ClientError.new "Topspin: #{msg} (#{status})"
       else
         msg = response["message"] rescue nil
         msg ||= "Error"
-        raise TopspinStore::InternalError.new "Topspin: #{msg} (#{status})"
+        raise TopspinStoreApi::InternalError.new "Topspin: #{msg} (#{status})"
       end
     end
 
@@ -53,7 +53,7 @@ module TopspinStoreApi
     # options:
     #   :offer_id - the offer ID (mandatory)
     def detail(options = {})
-      raise TopspinStore::ClientError.new ":offer_id option is mandatory" unless options[:offer_id]
+      raise TopspinStoreApi::ClientError.new ":offer_id option is mandatory" unless options[:offer_id]
       fetch_json("detail/#{options[:offer_id]}")
     end
 
