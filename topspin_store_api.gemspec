@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Bill Horsman"]
   s.email       = ["bill@logicalcobwebs.com"]
   s.homepage    = "https://github.com/bandzoogle/topspin_store_api"
-  s.summary     = %q{TODO: Client for the TopSpin Store API V2}
-  s.description = %q{TODO: Client for the TopSpin Store API V2}
+  s.summary     = %q{Client for the TopSpin Store API V2}
+  s.description = %q{Client for the TopSpin Store API V2}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
