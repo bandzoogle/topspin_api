@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe TopspinStoreApi::Client do
+describe TopspinApi::Client do
   before(:each) do
-    @client = TopspinStoreApi::Client.new 3752
+    @client = TopspinApi::Client.new 3752
   end
 
   describe "page" do

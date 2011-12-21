@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe TopspinStoreApi::Store do
+describe TopspinApi::Store do
   before(:each) do
-    @store = TopspinStoreApi::Store.new 3752
+    @store = TopspinApi::Store.new 3752
   end
 
   describe "page" do

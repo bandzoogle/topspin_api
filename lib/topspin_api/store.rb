@@ -1,4 +1,4 @@
-module TopspinStoreApi
+module TopspinApi
 
   class Store
 
