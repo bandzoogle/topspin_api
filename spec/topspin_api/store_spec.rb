@@ -5,9 +5,13 @@ describe TopspinApi::Store do
     @store = TopspinApi::Store.new 3752
   end
 
+  describe "authenticate" do
+    it { @store.authenticate("me@example.com", "123").should_not be_nil }
+  end
+
   describe "page" do
     before(:each) do
-      @store.client.stub!(:page).and_return(fetch_json("page"))
+      @store.stub!(:fetch_json).and_return(fetch_json("page"))
       @offers = @store.offers
     end
 
@@ -23,7 +27,7 @@ describe TopspinApi::Store do
 
   describe "detail" do
     before(:each) do
-      @store.client.stub!(:detail).and_return(fetch_json("detail"))
+      @store.stub!(:fetch_json).and_return(fetch_json("detail"))
       @offer = @store.detail(59484)
     end
 
