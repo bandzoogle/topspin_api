@@ -2,11 +2,7 @@ require 'spec_helper'
 
 describe TopspinApi::Artist do
   before(:each) do
-    @artist = TopspinApi::Artist.new
-  end
-
-  describe "authenticate" do
-    it { @artist.authenticate("me@example.com", "123").should_not be_nil }
+    @artist = TopspinApi::Artist.new "me@example.com", "123"
   end
 
   describe "list" do

@@ -2,17 +2,13 @@ require 'spec_helper'
 
 describe TopspinApi::Store do
   before(:each) do
-    @store = TopspinApi::Store.new 3752
-  end
-
-  describe "authenticate" do
-    it { @store.authenticate("me@example.com", "123").should_not be_nil }
+    @store = TopspinApi::Store.new "me@example.com", "123"
   end
 
   describe "page" do
     before(:each) do
       @store.stub!(:fetch_json).and_return(fetch_json("page"))
-      @offers = @store.offers
+      @offers = @store.offers(3752)
     end
 
     it { @offers.should have(1).offer }

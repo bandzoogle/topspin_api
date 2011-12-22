@@ -6,8 +6,9 @@ module TopspinApi
 
     attr_accessor :client
 
-    def initialize()
+    def initialize(api_user, api_key)
       @prefix = 'v1/artist'
+      authenticate(api_user, api_key)
     end
 
     # Get an array of all the artists for these credentials.
