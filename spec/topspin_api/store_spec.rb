@@ -7,7 +7,7 @@ describe TopspinApi::Store do
 
   describe "page" do
     before(:each) do
-      @store.stub!(:fetch_json).and_return(fetch_json("page"))
+      @store.stub(:fetch_json).and_return(fetch_json("page"))
       @offers = @store.offers(3752)
     end
 
@@ -18,12 +18,11 @@ describe TopspinApi::Store do
     it { @offers.current_page.should == 1 }
     it { @offers.total_entries.should == 1 }
     it { @offers.per_page.should == 25 }
-
   end
 
   describe "detail" do
     before(:each) do
-      @store.stub!(:fetch_json).and_return(fetch_json("detail"))
+      @store.stub(:fetch_json).and_return(fetch_json("detail"))
       @offer = @store.detail(59484)
     end
 
@@ -31,7 +30,5 @@ describe TopspinApi::Store do
     it { @offer["name"].should == "MY OFFER" }
     it { @offer["description"].should == "an offer i am offering" }
     it { @offer["large_image_url"].should == "http://app.topspin.net/images/avatar_default.jpg" }
-
   end
-
 end

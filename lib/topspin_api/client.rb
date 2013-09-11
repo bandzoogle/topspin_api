@@ -17,7 +17,7 @@ module TopspinApi
       options[:basic_auth] = { :username => @email, :password => @api_key }
       response = self.class.get "http://app.topspin.net/api/#{@prefix}/#{path}", options
       case status = response.headers['status']
-      when "200"
+      when "200", "200 OK"
         response.parsed_response
       when "401"
         msg = response["message"] rescue nil

@@ -8,7 +8,7 @@ describe TopspinApi::Artist do
   describe "list" do
     before(:each) do
       hash = fetch_json("artists")
-      @artist.stub!(:fetch_json).and_return(hash)
+      @artist.stub(:fetch_json).and_return(hash)
       @artists = @artist.list
     end
 
