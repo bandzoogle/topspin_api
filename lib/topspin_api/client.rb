@@ -18,7 +18,7 @@ module TopspinApi
       response = self.class.get "http://app.topspin.net/api/#{@prefix}/#{path}", options
       case status = response.headers['status']
       when "200", "200 OK"
-        response.parsed_response
+        JSON.parse response.body
       when "401"
         msg = response["message"] rescue nil
         msg ||= "Unauthorized access"
