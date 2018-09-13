@@ -14,12 +14,12 @@ module TopspinApi
     # Get an array of all the artists for these credentials.
     def list
       hash = fetch_json
-      decorate(hash, hash["artists"].map {|artist|
+      hash["artists"].map {|artist|
         {
           :id => artist["id"],
           :name => artist["name"]
         }
-      })
+      }
     end
 
   end

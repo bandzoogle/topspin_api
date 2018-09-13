@@ -12,14 +12,9 @@ describe TopspinApi::Artist do
       @artists = @artist.list
     end
 
-    it { @artists.should have(2).stores }
+    it { @artists.count.should == 2 }
     it { @artists.first[:id].should == 3752 }
     it { @artists.first[:name].should == "David Dufresne TEST" }
-    it { @artists.total_pages.should == 1 }
-    it { @artists.current_page.should == 1 }
-    it { @artists.total_entries.should == 2 }
-    it { @artists.per_page.should == 25 }
-
   end
 
 end
